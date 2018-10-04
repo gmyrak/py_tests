@@ -14,30 +14,26 @@ red    = canvas.create_oval(h, h,        h+2*R,  h+2*R)
 yellow = canvas.create_oval(h, 2*h+2*R,  h+2*R,  2*h+4*R)
 green  = canvas.create_oval(h, 3*h+4*R,  h+2*R,  3*h+6*R)
 
+def set_light(r, g, y):
+    canvas.itemconfigure(red, fill= 'red' if r else 'gray')
+    canvas.itemconfigure(green, fill='green' if g else 'gray')
+    canvas.itemconfigure(yellow, fill='yellow' if y else 'gray')
+
+
 def set_mode(mode):
     if mode == 0:  # off
-        canvas.itemconfigure(red, fill='gray')
-        canvas.itemconfigure(yellow, fill='gray')
-        canvas.itemconfigure(green, fill='gray')
+        set_light(0, 0, 0)
     elif mode == 1:  # red
-        canvas.itemconfigure(red, fill='red')
-        canvas.itemconfigure(yellow, fill='gray')
-        canvas.itemconfigure(green, fill='gray')
+        set_light(1, 0, 0)
         return 2, 3000
     elif mode == 2:  # red + yellow
-        canvas.itemconfigure(red, fill='red')
-        canvas.itemconfigure(yellow, fill='yellow')
-        canvas.itemconfigure(green, fill='gray')
+        set_light(1, 0, 1)
         return 3, 1000
     elif mode == 3:  # green
-        canvas.itemconfigure(red, fill='gray')
-        canvas.itemconfigure(yellow, fill='gray')
-        canvas.itemconfigure(green, fill='green')
+        set_light(0, 1, 0)
         return 4, 3000
     elif mode == 4:  # yellow
-        canvas.itemconfigure(red, fill='gray')
-        canvas.itemconfigure(yellow, fill='yellow')
-        canvas.itemconfigure(green, fill='gray')
+        set_light(0, 0, 1)
         return 1, 1000
 
 
