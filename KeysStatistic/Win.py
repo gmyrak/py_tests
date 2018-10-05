@@ -1,5 +1,8 @@
 from tkinter import *
 from  Game import *
+'''Master'''
+'''dev 3 p72 dev to contin...'''
+
 
 edit_mode = False # Реагировать на клавиши
 ShowPredict = True # Показывать предсказание
