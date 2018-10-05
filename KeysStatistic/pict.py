@@ -8,6 +8,8 @@ R = 100
 vmax = 5
 interval = 10
 
+'dev 3'
+
 root = Tk()
 #root.wm_attributes(fullscreen=True)
 #root.geometry('+20+20')
