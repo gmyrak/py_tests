@@ -1,4 +1,5 @@
 def nod(a, b):
+    'Nod'
     while a > 0:
         a, b = b%a, a
     return b
